@@ -5,12 +5,19 @@
  */
 package game2dms;
 
+import game2dms.Heroi;
+import game2dms.Inimigo;
+
 /**
  *
  * @author alex
  */
 public class Console extends javax.swing.JFrame {
 
+    
+    private Heroi heroi;
+    private Inimigo inimigo;
+    
     /**
      * Creates new form Console
      */
@@ -130,18 +137,22 @@ public class Console extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBAndarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAndarActionPerformed
-        jlEstado.setText("Andando");
+        heroi.andar();
+        jlEstado.setText(heroi.getEstado());
     }//GEN-LAST:event_jBAndarActionPerformed
 
     private void jBPularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPularActionPerformed
+        heroi.pular();
         jlEstado.setText("Pulando");
     }//GEN-LAST:event_jBPularActionPerformed
 
     private void JBMorrerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBMorrerActionPerformed
+        heroi.morrer();
         jlEstado.setText("Morri");
     }//GEN-LAST:event_JBMorrerActionPerformed
 
     private void jBPararActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPararActionPerformed
+        heroi.parar();
         jlEstado.setText("Parei");
     }//GEN-LAST:event_jBPararActionPerformed
 
